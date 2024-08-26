@@ -1,4 +1,4 @@
-export function Search(){
+export function Search({search, setSearch, handleSearch}){
     return (
     <div className="grid grid-cols-3 lg:grid-cols-6 p-4 gap-1.5 lg:gap-5 lg:w-3/4 m-auto ">
         <input
@@ -6,7 +6,9 @@ export function Search(){
         className="border border-gray-300 rounded-lg p-2 col-span-2 lg:col-span-5 text-black"
         placeholder="Enter Name of Place"
         name="search"
+        value={search}
+        onChange={(event) => setSearch(event.target.value)}
         />
-        <button className="rounded-lg bg-blue-500 hover:bg-blue-400"> search</button>
+        <button className="rounded-lg bg-blue-500 hover:bg-blue-400"  onClick={handleSearch}> search</button>
     </div>)
 }
